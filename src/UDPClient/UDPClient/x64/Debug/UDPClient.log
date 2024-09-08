@@ -1,0 +1,4 @@
+﻿D:\Microsoft Visual Studio\2022\VisualStudio2022_Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: Output 目录未以斜杠结尾。  此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+  main.cpp
+G:\VirtualBox VMs\ubuntu22.04\shared\code\SocketWebMessage\src\UDPClient\main.cpp(30,11): warning C4244: “初始化”: 从“SOCKET”转换到“int”，可能丢失数据
+  UDPClient.vcxproj -> G:\VirtualBox VMs\ubuntu22.04\shared\code\SocketWebMessage\bin\UDPClient.exe
