@@ -5,7 +5,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	unsigned short port = 514;	//514ÊÇÄ¬ÈÏµÄUDPÈÕÖ¾·þÎñ¶Ë¿Ú
+	unsigned short port = 514;	//514ï¿½ï¿½Ä¬ï¿½Ïµï¿½UDPï¿½ï¿½Ö¾ï¿½ï¿½ï¿½ï¿½Ë¿ï¿½
 	UDP syslog;
 	if (!syslog.bind_pi(port))
 	{

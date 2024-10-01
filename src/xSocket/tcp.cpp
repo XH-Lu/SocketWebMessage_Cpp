@@ -33,7 +33,7 @@ TCP::~TCP()
 
 int TCP::create_socket()
 {
-	sock = socket(AF_INET, SOCK_STREAM, 0);  //TCP/IPÐ­Òé£¬TCP
+	sock = socket(AF_INET, SOCK_STREAM, 0);  //TCP/IPÐ­ï¿½é£¬TCP
 	if (sock == -1)
 	{
 		cout << "create socket failed!\n" << endl;
@@ -46,9 +46,9 @@ bool TCP::bind_pi(unsigned short port)
 	if (sock <= 0)
 		create_socket();
 	sockaddr_in saddr;
-	saddr.sin_family = AF_INET;  //Ö¸¶¨TCPÐ­Òé
-	saddr.sin_port = htons(port);  //htons±¾µØ×Ö½ÚÐò×ª»»ÎªÍøÂç×Ö½ÚÐò£¬´ó¶Ë2£¨2×Ö½Ú£©£º00000000 00000010£¬Ð¡¶Ë2£¨2×Ö½Ú£©£º00000010 00000000£¬x86ÏµÍ³£¨windows£©±¾µØÒ»°ãÎªÐ¡¶Ë£¬ÍøÂç×Ö½ÚÐòÎª´ó¶Ë
-	saddr.sin_addr.s_addr = htonl(0);  //Ö¸¶¨IPµØÖ·
+	saddr.sin_family = AF_INET;  //Ö¸ï¿½ï¿½TCPÐ­ï¿½ï¿½
+	saddr.sin_port = htons(port);  //htonsï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½×ªï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ò£¬´ï¿½ï¿½2ï¿½ï¿½2ï¿½Ö½Ú£ï¿½ï¿½ï¿½00000000 00000010ï¿½ï¿½Ð¡ï¿½ï¿½2ï¿½ï¿½2ï¿½Ö½Ú£ï¿½ï¿½ï¿½00000010 00000000ï¿½ï¿½x86ÏµÍ³ï¿½ï¿½windowsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ÎªÐ¡ï¿½Ë£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½
+	saddr.sin_addr.s_addr = htonl(0);  //Ö¸ï¿½ï¿½IPï¿½ï¿½Ö·
 
 
 	if (bind(sock, (sockaddr*)&saddr, sizeof(saddr)) != 0)
@@ -57,7 +57,7 @@ bool TCP::bind_pi(unsigned short port)
 		return false;
 	}
 	cout << "bind port " << port << " success!\n";
-	listen(sock, NUM_CONNECT_QUE);  //·þÎñ¶Ë½øÈë¼àÌý×´Ì¬
+	listen(sock, NUM_CONNECT_QUE);  //ï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬
 	return true;
 }
 
@@ -147,7 +147,7 @@ bool TCP::set_block(bool isblock)
 #ifdef _WIN32
 	unsigned long ul = 0;
 	if (!isblock)
-		ul = 1;  //·Ç×èÈû
+		ul = 1;  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	ioctlsocket(sock, FIONBIO, &ul);
 #else
 	int flags = fcntl(sock, F_GETFL, 0);

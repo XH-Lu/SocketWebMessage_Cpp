@@ -1,2 +1,3 @@
-libsocket.so:tcp.cpp tcp.h udp.cpp udp.h
-	g++ $+ -o $@ -fpic -shared -std=c++11
+OUTPUT_DIR = ../../bin
+$(OUTPUT_DIR)/libsocket.so:tcp.cpp udp.cpp
+	g++ $+ -o $@ -fpic -shared -I ../../include -std=c++11

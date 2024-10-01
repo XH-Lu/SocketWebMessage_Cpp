@@ -51,11 +51,9 @@ bool HttpResponse::set_request(std::string request)
 	{
 		filename = "/index.html";
 	}
-#ifdef _WIN32
+
 	string filepath = "../src/HttpServer/html";
-#else
-	string filepath = "html";
-#endif
+
 	filepath += filename;
 
 #ifdef _WIN32
